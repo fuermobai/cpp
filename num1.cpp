@@ -1,11 +1,11 @@
 #include <iostream>
 /*
-Sum of 1 to 10
+Sum of 5 to 100
  */
 int main()
 {
-    int sum = 0,count = 1;
-    while(count <=10){
+    int sum = 0,count = 50;
+    while(count <=100){
         sum += count;
         ++count;
     }
