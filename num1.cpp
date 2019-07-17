@@ -4,12 +4,12 @@ Sum of 5 to 100
  */
 int main()
 {
-    int sum = 0,count = 50;
-    while(count <=100){
-        sum += count;
-        ++count;
+    int sum = 0,count = 10;
+    while(count >=1){
+        std::cout << count << std::endl;
+        --count;
     }
-    std::cout<< sum << std::endl;
+//    std::cout<< sum << std::endl;
     return 0;
 }
 //    std::cout << "Hello,World" << std::endl;
