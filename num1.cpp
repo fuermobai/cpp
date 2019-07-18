@@ -2,27 +2,25 @@
 /*
 list numbers between n1 and n2 (n2>n1)
  */
+void print_range(int lo,int hi)
+{
+    if (lo > hi)
+    {
+        print_range(hi,lo);
+        return;
+    }
+    while (lo <= hi)
+    {
+        std::cout << lo << std::endl;
+        ++lo;
+    }
+}
 int main()
 {
-    int currVal = 0,val = 0;
-    if (std::cin >> currVal)
-    {
-        int cnt = 1;
-        while (std::cin >> val)
-        {
-            if (val == currVal)
-            {
-                ++cnt;
-            }
-            else
-            {
-                std::cout << currVal << " occurs " <<cnt <<" times "<< std::endl;
-                currVal = val;
-                cnt = 1;
-            }
-            
-        }
-        std::cout << currVal << " occurs " << cnt << " times " << std::endl;
-    }
+    int low,high;
+    std::cout << "Please input two numbers : " << std::endl;
+    std::cin >> low >> high;
+
+    print_range(low,high);
     return 0;
 }
