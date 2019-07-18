@@ -4,13 +4,25 @@ list numbers between n1 and n2 (n2>n1)
  */
 int main()
 {
-    int sum = 0,val = 0;
-    //std::cin >> n1 >> n2;
-    while (std::cin >> val)
+    int currVal = 0,val = 0;
+    if (std::cin >> currVal)
     {
-        sum += val;
-        std::cout << sum << std::endl;
+        int cnt = 1;
+        while (std::cin >> val)
+        {
+            if (val == currVal)
+            {
+                ++cnt;
+            }
+            else
+            {
+                std::cout << currVal << " occurs " <<cnt <<" times "<< std::endl;
+                currVal = val;
+                cnt = 1;
+            }
+            
+        }
+        std::cout << currVal << " occurs " << cnt << " times " << std::endl;
     }
-    //std::cout << sum << std::endl;
     return 0;
 }
