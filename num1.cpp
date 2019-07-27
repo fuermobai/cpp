@@ -2,11 +2,15 @@
 #include <iostream>
 #include "./Sales_item.h"
 /*
-list numbers between n1 and n2 (n2>n1)
+
  */
+int global_int;
+std::string global_str;
 int main()
 {
-    std::cout << 2 << "\115\012";
-    std::cout << 2 << "\t\115\012";
+    int local_int;
+    std::string local_str;
+    std::cout << "local_int number is :" << local_int << "\n" << local_str << std::endl;
+    std::cout << "global_int number is :" << global_int << "\n" << global_str << std::endl;
     return 0;
 }
