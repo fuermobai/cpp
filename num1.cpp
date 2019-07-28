@@ -4,13 +4,16 @@
 /*
 
  */
-int global_int;
-std::string global_str;
+int reused = 42;
 int main()
 {
-    int local_int;
-    std::string local_str;
-    std::cout << "local_int number is :" << local_int << "\n" << local_str << std::endl;
-    std::cout << "global_int number is :" << global_int << "\n" << global_str << std::endl;
+    int unique = 0;
+    std::cout << reused << "\t" << unique << std::endl;
+    //在内部定义reused前输出的为全局的reused值
+    int reused = 0;
+    std::cout << reused <<  "\t" << unique << std::endl;
+    //在main函数内部的作用域输出，reused为0
+    std::cout << ::reused << "\t" << unique <<std::endl;
+    //reused 前添加了::表示覆盖了当前的作用域规则，即回到了全局作用域，因为全局作用域没有自己的名字，故::前面为空
     return 0;
 }
