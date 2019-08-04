@@ -8,10 +8,11 @@
 int main()
 {
     int i = 42;
-    int *p;
-    int *&r = p;// r是指针p的引用，所以r的类型是int类型的*指针引用
-
-    r = &i;
-    *r = 0;
-
+    std::cout << i << std::endl;
+    int &r1 = i;
+    const int &r2 = i;
+    r1 = 0;
+    std::cout << i << std::endl;
+    //r2 = 0; r2是const int 类型引用，无法改变i的值
+    //std::cout << i << std::endl;
 }
