@@ -7,12 +7,11 @@
  */
 int main()
 {
-    int i = 42;
-    std::cout << i << std::endl;
-    int &r1 = i;
-    const int &r2 = i;
-    r1 = 0;
-    std::cout << i << std::endl;
-    //r2 = 0; r2是const int 类型引用，无法改变i的值
-    //std::cout << i << std::endl;
+    int a =3 ,b = 4;
+    decltype(a) c = a;//c int
+    decltype((b)) d = a;// d int &
+    std::cout << "first time " << a << " " << b << " " << c << " " << d << std::endl;
+    ++c;
+    ++d;
+    std::cout << "second time " << a << " " << b << " " << c << " " << d << std::endl;
 }
