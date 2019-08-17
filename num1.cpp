@@ -1,11 +1,10 @@
-
+//Author : Porco Rosso 
+//Mail : fuermobai@gmail.com
 #include <iostream>
 #include "./Sales_item.h"
 #include <cstdlib>
 #include <typeinfo>
-/*
 
- */
 int main()
 {
     const int i =42;// i const int 
