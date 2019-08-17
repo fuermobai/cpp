@@ -2,36 +2,22 @@
 #include <iostream>
 #include "./Sales_item.h"
 #include <cstdlib>
+#include <typeinfo>
 /*
 
  */
 int main()
 {
-    int i = 0,&r = i;
-    auto a = r;
-    a = 42;
-    std::cout << i << " " << a << std::endl;
-    const int ci = i,&cr = ci;
-    auto b = ci;
-    b = 42;
-    std::cout << b << " " << ci << std::endl;
-    auto c = cr;
-    c = 42;
-    std::cout << c << " " << cr << " " << ci <<std::endl;
-    auto d = &i;
-    //d = 42;
-    std::cout << d << " " << i << std::endl;
-    auto e = &ci;
-    //e = 42;//常量指针不能再被赋值，只能变动地址
-    std::cout << e << " " << ci << std::endl;
-    
-    const auto f = ci;
-    auto &g = ci;
-    g = 42;
-    std::cout << g <<" " << ci << std::endl;
-    //auto &h = 42;
-    const auto &j = 42;
-    auto k = ci,&l = i;
-    auto &m = ci,*p = &ci;
-    //auto &n =i,*p2 = &ci;
+    const int i =42;// i const int 
+    auto j = i; // j int 
+    const auto &k = i; // k int &
+    auto *p = &i;// p int * 
+    const auto j2 = i,&k2 = i;// j2 const in k2 const int &
+    std::cout << typeid(i).name() << std::endl;
+    std::cout << typeid(j).name() << std::endl;
+    std::cout << typeid(k).name() << std::endl;
+    std::cout << typeid(p).name() << std::endl;
+    std::cout << typeid(j2).name() << std::endl;
+    std::cout << typeid(k2).name() << std::endl;
+    return 0;
 }
