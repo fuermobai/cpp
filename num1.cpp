@@ -7,11 +7,17 @@
  */
 int main()
 {
-    int i = 42;
-    int *p;
-    int *&r = p;// r是指针p的引用，所以r的类型是int类型的*指针引用
-
-    r = &i;
-    *r = 0;
-
+    int i = 0,&r = i;
+    auto a = r;
+    const int ci = i,&cr = ci;
+    auto b = ci;
+    auto c = cr;
+    auto d = &i;
+    auto e = &ci;
+    
+    const auto f = ci;
+    auto &g = ci;
+    auto &h = 42;
+    const auto &j = 42;
+    auto k = ci,
 }
