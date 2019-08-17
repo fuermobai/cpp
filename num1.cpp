@@ -22,11 +22,13 @@ int main()
     //d = 42;
     std::cout << d << " " << i << std::endl;
     auto e = &ci;
-    e = 42;//常量指针不能再被赋值，只能变动地址
+    //e = 42;//常量指针不能再被赋值，只能变动地址
     std::cout << e << " " << ci << std::endl;
     
     const auto f = ci;
     auto &g = ci;
+    g = 42;
+    std::cout << g <<" " << ci << std::endl;
     //auto &h = 42;
     const auto &j = 42;
     auto k = ci,&l = i;
