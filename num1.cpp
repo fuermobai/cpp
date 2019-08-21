@@ -4,22 +4,18 @@
 #include "./Sales_item.h"
 #include <cstdlib>
 #include <typeinfo>
+#include <cctype>
 
 int main()
 {
-    std::string s("Hello World!!!");
-    std::cout << s.size() << std::endl;
-    //std::string::size_type i = 0;
-    //while (i < s.size())
-    //{
-    //    s[i]='X';
-    //    i++;
-    //}
-    for (decltype(s.size()) i = 0; i < s.size(); ++i)
-    {
-        s[i] = 'Y';
-    }
-    
+    std::string s("Hello World!!!My name is Porco,which means A 'Red' + 'Pig' in Chinese @-@");
     std::cout << s << std::endl;
-    std::cout << s.size() << std::endl;
+    for (auto &i : s)
+    {
+        if (ispunct(i))
+        {
+            i = ' ';//空字符，是使用单引号' ‘ 而不是双引号" "
+        }
+    }
+    std::cout << s << std::endl;
 }
