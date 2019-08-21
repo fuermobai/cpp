@@ -12,7 +12,7 @@ int main()
     std::cout << s << std::endl;
     for (auto &i : s)
     {
-        if (ispunct(i))
+        if (ispunct(i))//此处使用了替换方案，也可以直接判断是否是标点后，将其合到一个string对象中去
         {
             i = ' ';//空字符，是使用单引号' ‘ 而不是双引号" "
         }
