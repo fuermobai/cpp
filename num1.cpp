@@ -8,9 +8,14 @@
 int main()
 {
     std::string s("Hello World!!!");
-    for (auto &i : s)
+    std::cout << s.size() << std::endl;
+    std::string::size_type i = 0;
+    while (i < s.size())
     {
-        i = toupper(i);
+        s[i]='X';
+        i++;
     }
+    
     std::cout << s << std::endl;
+    std::cout << s.size() << std::endl;
 }
