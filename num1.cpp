@@ -8,12 +8,9 @@
 int main()
 {
     std::string s("Hello World!!!");
-    decltype(s.size()) punct_cnt = 0;
-    for (auto c : s)
+    for (auto &i : s)
     {
-        if (ispunct(c))
-            ++punct_cnt;
+        i = toupper(i);
     }
-    std::cout << punct_cnt << " punctuation characters in " << s << std::endl;
-    
+    std::cout << s << std::endl;
 }
