@@ -7,16 +7,13 @@
 
 int main()
 {
-    const int i =42;// i const int 
-    auto j = i; // j int 
-    const auto &k = i; // k int &
-    auto *p = &i;// p int * 
-    const auto j2 = i,&k2 = i;// j2 const in k2 const int &
-    std::cout << typeid(i).name() << std::endl;
-    std::cout << typeid(j).name() << std::endl;
-    std::cout << typeid(k).name() << std::endl;
-    std::cout << typeid(p).name() << std::endl;
-    std::cout << typeid(j2).name() << std::endl;
-    std::cout << typeid(k2).name() << std::endl;
-    return 0;
+    std::string s("Hello World!!!");
+    decltype(s.size()) punct_cnt = 0;
+    for (auto c : s)
+    {
+        if (ispunct(c))
+            ++punct_cnt;
+    }
+    std::cout << punct_cnt << " punctuation characters in " << s << std::endl;
+    
 }
