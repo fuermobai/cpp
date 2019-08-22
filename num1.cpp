@@ -19,7 +19,12 @@ int main()
 
     for (auto i : words)//将for循环输出words内容，改为for range输出
     {
-        std::cout << i ;
+        if(!i.empty())
+            for (int item = 0; item < i.size(); ++item)
+            {
+                i[item] = toupper(i[item]);
+            }
+        std::cout << i << std::endl;
     }
    // for (auto i = 0; i < words.size(); ++i)
    // {
