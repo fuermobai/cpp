@@ -9,15 +9,21 @@
 
 int main()
 {
-    int number;
-    std::vector<int> numbers;
-    while (std::cin >> number)
+    std::string word;
+    std::vector<std::string> words;
+    while (std::cin >> word)
     {
-        numbers.push_back(number);
+        words.push_back(word);
     }
-    for (auto i = 0; i < numbers.size(); ++i)
+    //Linux可以使用Ctrl + D来终止字符输入并输出
+
+    for (auto i : words)//将for循环输出words内容，改为for range输出
     {
-        std::cout << numbers[i] ; 
+        std::cout << i ;
     }
-    std::cout << "\n" ;
+   // for (auto i = 0; i < words.size(); ++i)
+   // {
+   //     std::cout << words[i] ; 
+   // }
+   // std::cout << "\n" ;
 }
