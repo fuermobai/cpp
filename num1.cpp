@@ -3,22 +3,20 @@
 #include "Sales_data.h"
 #include <string>
 #include <cstdlib>
+#include <vector>
 
 int main()
 {
-<<<<<<< HEAD
-    int i = 42;
-    double I = 42.001;
-    std::cout << i + I << std::endl;
-    auto item = i + I;
-    std::cout << item << std::endl;
-=======
-    std::string line;
-    while (getline(std::cin,line,' '))//通过一个空格，控制输入内容为第一个空格前的内容
+    std::vector<int> numbers;
+    int number,result;
+    while (std::cin >> number)
     {
-        if (!line.empty())
-            std::cout << line << std::endl;
+        numbers.push_back(number);
     }
-    return 0;
->>>>>>> 961883f36df787b7c6fda5e2ce0f89f313b5e415
+    std::cout << numbers.size() << std::endl;
+    for (auto i = 0; i < numbers.size(); ++i)
+    {
+        result += (numbers[i] + numbers[numbers.size()-1-i])/2;//根据高斯公式得出最终结果，要除以2
+    }
+    std::cout << result << std::endl;
 }
