@@ -7,12 +7,14 @@
 
 int main()
 {
-    std::vector<std::string> numbers{"hello","my","name","is","Porco","Rosso"};
-    //std::vector<std::string>::iterator i;
-    for (auto i = numbers.cbegin(); i != numbers.cend(); ++i)
+    std::vector<int> numbers{1,2,3,4,5,6,7,8,9,0};
+    for (auto i = numbers.begin(); i != numbers.end(); ++i)
     {
-        std::cout << *i << " ";
+        *i *= 2;
     }
-    std::cout << std::endl;
+    for (auto item : numbers)
+    {
+        std::cout << item << " ";
+    }
     return 0;
 }
