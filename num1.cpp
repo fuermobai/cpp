@@ -9,11 +9,13 @@
 
 int main()
 {
-    unsigned buf_size = 1024;
-    int ia[buf_size];//定义错误，buf_size不是常量
-    int ia[4*7-14];//正确
-    int ia[txt_size()];//txt_size()的返回值要在它执行之后才有
-    char st[11] = "fundamental";//不正确，长度应为12而不是11
-
+    std::string sa[10];//string 字符串 ""
+    int ia[10];//int整数 0
+    int main()
+    {
+        std::string sa2[10];//string 字符串 ""
+        int         ia2[10];//int 整数 随机数
+    }
+    
     return 0;
 }
