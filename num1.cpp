@@ -6,16 +6,17 @@
 #include <typeinfo>
 #include <cctype>
 #include <vector>
-
+//练习3.31
 int main()
 {
-    std::string sa[10];//string 字符串 ""
-    int ia[10];//int整数 0
-    int main()
+    int numbers[10];
+    for (size_t i = 0; i < 10; i++)
     {
-        std::string sa2[10];//string 字符串 ""
-        int         ia2[10];//int 整数 随机数
+        numbers[i] = i;
     }
-    
-    return 0;
+    for (auto i : numbers)
+    {
+        std::cout << i << " ";
+    }
+    return 0; 
 }
