@@ -6,22 +6,22 @@
 #include <typeinfo>
 #include <cctype>
 #include <vector>
-//练习3.32
+//练习3.33
 int main()
 {
-    int numbers[10];
-    int numbers1[10];
-    for (size_t i = 0; i < 10; i++)
+    unsigned scores[11];//当scores没有初始化时，其结果会出现不可预知的结果，当然其中包含了正确结果，但是没有覆盖的情况中，尚未测试，但是已经不满足实际使用了
+    unsigned grade;
+    while (std::cin >> grade)
     {
-        numbers[i] = i;
+        if (grade <= 100)
+        {
+            ++scores[grade/10];
+        }
     }
-    for (size_t i = 0; i < 10; i++)
-    {
-        numbers1[i] = numbers[9-i];
-    }
-    for (auto i : numbers1)
+    for (auto i : scores)
     {
         std::cout << i << " ";
     }
-    return 0; 
+    return 0;
 }
+        
