@@ -9,28 +9,18 @@
 
 int main()
 {
-    std::vector<int> numbers;
-    int number;
-    while (std::cin >> number)
+    std::vector<unsigned> numbers(11,0);
+    unsigned grade;
+    while (std::cin >> grade)
     {
-        numbers.push_back(number);
+        if (grade <= 100)
+        {
+            ++*(numbers.begin()+grade/10);//使用迭代器代替容器对象的下标，是一种较为简单的做法（？）
+        }
     }
-    //for (auto i : numbers)
-    //{
-    //    std::cout << i*i << " ";
-    //}
-    auto tl1 = numbers.begin();
-    auto tl2 = numbers.end() - 1;
-    //std::cout << (tl1 < tl2) << " " << (numbers.begin() != numbers.end()) << std::endl;
-    while ( tl1 < tl2 )
+    for (auto &i : numbers)
     {
-        //std::cout << *tl1+*(tl1 + 1)  << std::endl;
-        std::cout << *tl1 + *tl2 << std::endl;
-        ++tl1;
-        --tl2;
+        std::cout << i << " ";
     }
-    //std::cout << (tl1 < tl2) << " " << (numbers.begin() != numbers.end()) << std::endl;
-    // 之所以不能使用 numbers.begin() != numbers.end() 来作为while循环判断条件，是因为这个条件是一直成立的，即此时while是无限循环，溢出错误
-
     return 0;
 }
