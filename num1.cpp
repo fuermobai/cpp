@@ -9,18 +9,11 @@
 
 int main()
 {
-    std::vector<unsigned> numbers(11,0);
-    unsigned grade;
-    while (std::cin >> grade)
-    {
-        if (grade <= 100)
-        {
-            ++*(numbers.begin()+grade/10);//使用迭代器代替容器对象的下标，是一种较为简单的做法（？）
-        }
-    }
-    for (auto &i : numbers)
-    {
-        std::cout << i << " ";
-    }
+    unsigned buf_size = 1024;
+    int ia[buf_size];//定义错误，buf_size不是常量
+    int ia[4*7-14];//正确
+    int ia[txt_size()];//txt_size()的返回值要在它执行之后才有
+    char st[11] = "fundamental";//不正确，长度应为12而不是11
+
     return 0;
 }
