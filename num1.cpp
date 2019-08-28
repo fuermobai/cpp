@@ -10,38 +10,12 @@
 //练习3.33
 int main()
 {
-    std::string sentence1 = "aaaaaaaa";
-    std::string sentence2 = "bbbbbbbb";
-    if (sentence1 == sentence2)
-    {
-        std::cout << "Right" << std::endl;
-    }
-    else
-    {
-        std::cout << "Wrong" << std::endl;
-    }
-    
-
-    std::cout << "==================================" << std::endl;
-
-
-    //const char ca1[] = "My name is Porco";
-    const char *ca1("aaaaaaaaaa");
-    //const char ca2[] = "My name is Porco";
-    const char *ca2("aaaaaaaaaa");
-    auto result = std::strcmp(ca1,ca2);
-    if (result == 0)
-    {
-        std::cout << "ca1 is equal with ca2" << std::endl;
-    }
-    else if(result > 0)
-    {
-        std::cout << "ca1 is bigger than ca2" << std::endl;
-    }
-    else
-    {
-        std::cout << "ca2 is bigger than ca1" << std::endl;
-    }
-    return 0;
+    const char* sentence1("aaaaaaaaa");
+    const char *sentence2("bbbbbbbbbbb");
+    char sentence[100];
+    std::strcpy(sentence,sentence1);
+    std::strcat(sentence," ");
+    std::strcat(sentence,sentence2);
+    std::cout << sentence << std::endl;
 }
         
