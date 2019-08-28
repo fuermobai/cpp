@@ -10,12 +10,13 @@
 //练习3.33
 int main()
 {
-    const char* sentence1("aaaaaaaaa");
-    const char *sentence2("bbbbbbbbbbb");
-    char sentence[100];
-    std::strcpy(sentence,sentence1);
-    std::strcat(sentence," ");
-    std::strcat(sentence,sentence2);
-    std::cout << sentence << std::endl;
+    int numbers[] = {0,1,2,3,4,5,6};
+    std::vector<int> vec(std::begin(numbers),std::end(numbers));
+    for (auto i : vec)
+    {
+        std::cout << i << " ";
+    }
+    std::cout << std::endl;
+    return 0;
 }
         
