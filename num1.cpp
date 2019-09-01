@@ -6,10 +6,7 @@
 
 int main()
 {
-    int ia[]={0,2,4,6,8};
-    int last = *(ia +4 );
-    std::cout << last << " ";
-    last = *ia +4;
-    std::cout << last << std::endl;
+    auto result = 12 / 3 * 4 + 5 * 15 + 24 % 4 / 2;
+    std::cout << result << std::endl;
     return 0;
 }
