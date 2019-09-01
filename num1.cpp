@@ -1,4 +1,3 @@
-
 #include <iostream>
 #include "Sales_data.h"
 #include <string>
@@ -7,14 +6,10 @@
 
 int main()
 {
-    std::vector<int> numbers{1,2,3,4,5,6,7,8,9,0};
-    for (auto i = numbers.begin(); i != numbers.end(); ++i)
-    {
-        *i *= 2;
-    }
-    for (auto item : numbers)
-    {
-        std::cout << item << " ";
-    }
+    int ia[]={0,2,4,6,8};
+    int last = *(ia +4 );
+    std::cout << last << " ";
+    last = *ia +4;
+    std::cout << last << std::endl;
     return 0;
 }
