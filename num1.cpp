@@ -6,7 +6,10 @@
 
 int main()
 {
-    int i = -100000 * 300000;
-    std::cout << i << std::endl;
+    int numbers;
+    while (std::cin >> numbers && numbers != 42)
+    {
+        std::cout << numbers << " ";
+    }
     return 0;
 }
