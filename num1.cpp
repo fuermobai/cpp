@@ -6,12 +6,47 @@
 
 int main()
 {
-    std::vector<int> numbers{0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15};
-    int result;
-    for (auto i : numbers)
+    unsigned aCnt=0,eCnt=0,iCnt=0,oCnt=0,uCnt=0,spaceCnt=0,tabCnt=0,newLineCnt=0;
+    char ch;
+    while (std::cin >> std::noskipws >> ch)//std::noskipws 可输入空格
     {
-        result = (i%2 == 0) ? (i*2) : i;
-        std::cout << result << " ";
+        switch (ch)
+        {
+        case 'a': case 'A':
+            ++aCnt;
+            break;
+        case 'e': case 'E':
+            ++eCnt;
+            break;
+        case 'i': case 'I':
+            ++iCnt;
+            break;
+        case 'o': case 'O':
+            ++oCnt;
+            break;
+        case 'u': case 'U':
+            ++uCnt;
+            break;
+        case ' ':
+            ++spaceCnt;
+            break;
+        case '\t':
+            ++tabCnt;
+            break;
+        case '\n':
+            ++newLineCnt;
+            break;
+        default:
+            break;
+        }
     }
-    return 0;
+    std::cout << "Number of vowel a(A): \t" << aCnt << '\n'
+		<< "Number of vowel e(E): \t" << eCnt << '\n'
+		<< "Number of vowel i(I): \t" << iCnt << '\n'
+		<< "Number of vowel o(O): \t" << oCnt << '\n'
+		<< "Number of vowel u(U): \t" << uCnt << '\n'
+		<< "Number of space: \t" << spaceCnt << '\n'
+		<< "Number of tab char: \t" << tabCnt << '\n'
+		<< "Number of new line: \t" << newLineCnt << std::endl;
+    
 }
