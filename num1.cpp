@@ -6,8 +6,8 @@
 
 int main()
 {
-    unsigned aCnt=0,eCnt=0,iCnt=0,oCnt=0,uCnt=0,spaceCnt=0,tabCnt=0,newLineCnt=0;
-    char ch;
+    unsigned aCnt=0,eCnt=0,iCnt=0,oCnt=0,uCnt=0,spaceCnt=0,tabCnt=0,newLineCnt=0,ffCnt=0,flCnt=0,fiCnt=0;
+    char ch,prech = '\0';
     while (std::cin >> std::noskipws >> ch)//std::noskipws 可输入空格
     {
         switch (ch)
@@ -18,7 +18,12 @@ int main()
         case 'e': case 'E':
             ++eCnt;
             break;
-        case 'i': case 'I':
+        case 'i': 
+            if (prech == 'f')
+            {
+                ++fiCnt;
+            }
+        case 'I':
             ++iCnt;
             break;
         case 'o': case 'O':
@@ -26,6 +31,18 @@ int main()
             break;
         case 'u': case 'U':
             ++uCnt;
+            break;
+        case 'f':
+            if (prech == 'f')
+            {
+                ++ffCnt;
+            }
+            break;
+        case 'l':
+            if (prech == 'f')
+            {
+                ++flCnt;
+            }
             break;
         case ' ':
             ++spaceCnt;
@@ -39,6 +56,7 @@ int main()
         default:
             break;
         }
+        prech = ch;
     }
     std::cout << "Number of vowel a(A): \t" << aCnt << '\n'
 		<< "Number of vowel e(E): \t" << eCnt << '\n'
@@ -47,6 +65,9 @@ int main()
 		<< "Number of vowel u(U): \t" << uCnt << '\n'
 		<< "Number of space: \t" << spaceCnt << '\n'
 		<< "Number of tab char: \t" << tabCnt << '\n'
-		<< "Number of new line: \t" << newLineCnt << std::endl;
+		<< "Number of new line: \t" << newLineCnt << '\n'
+        << "Number of ff: \t" << ffCnt << '\n'
+        << "Number of fl: \t" << flCnt << '\n'
+        << "Number of fi: \t" << fiCnt << '\n' << std::endl;
     
 }
