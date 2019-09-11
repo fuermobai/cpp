@@ -7,7 +7,8 @@
 int main()
 {
     unsigned aCnt=0,eCnt=0,iCnt=0,oCnt=0,uCnt=0,spaceCnt=0,tabCnt=0,newLineCnt=0,ffCnt=0,flCnt=0,fiCnt=0;
-    char ch,prech = '\0';
+    char ch,prech = '\0';//prech设置为\0的目的是防止和任何输入对象重叠而在数量上计算+1
+    //同时对于ff、fl、fi的统计，首先确认前一个字符是f，然后确认紧邻的字符是f、l、i其中之一。这种情况下fff，表示两个ff统计
     while (std::cin >> std::noskipws >> ch)//std::noskipws 可输入空格
     {
         switch (ch)
