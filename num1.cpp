@@ -6,69 +6,31 @@
 
 int main()
 {
-    unsigned aCnt=0,eCnt=0,iCnt=0,oCnt=0,uCnt=0,spaceCnt=0,tabCnt=0,newLineCnt=0,ffCnt=0,flCnt=0,fiCnt=0;
-    char ch,prech = '\0';//prech设置为\0的目的是防止和任何输入对象重叠而在数量上计算+1
-    //同时对于ff、fl、fi的统计，首先确认前一个字符是f，然后确认紧邻的字符是f、l、i其中之一。这种情况下fff，表示两个ff统计
-    while (std::cin >> std::noskipws >> ch)//std::noskipws 可输入空格
+    int cur = 1, max = 0;
+    std::string str , maxstr = "" , curstr = "";
+    std::vector<std::string> st;
+    while (std::cin >> str)//此处将所有输入的string集合到容器st中
     {
-        switch (ch)
-        {
-        case 'a': case 'A':
-            ++aCnt;
-            break;
-        case 'e': case 'E':
-            ++eCnt;
-            break;
-        case 'i': 
-            if (prech == 'f')
-            {
-                ++fiCnt;
-            }
-        case 'I':
-            ++iCnt;
-            break;
-        case 'o': case 'O':
-            ++oCnt;
-            break;
-        case 'u': case 'U':
-            ++uCnt;
-            break;
-        case 'f':
-            if (prech == 'f')
-            {
-                ++ffCnt;
-            }
-            break;
-        case 'l':
-            if (prech == 'f')
-            {
-                ++flCnt;
-            }
-            break;
-        case ' ':
-            ++spaceCnt;
-            break;
-        case '\t':
-            ++tabCnt;
-            break;
-        case '\n':
-            ++newLineCnt;
-            break;
-        default:
-            break;
-        }
-        prech = ch;
+        st.push_back(str);
     }
-    std::cout << "Number of vowel a(A): \t" << aCnt << '\n'
-		<< "Number of vowel e(E): \t" << eCnt << '\n'
-		<< "Number of vowel i(I): \t" << iCnt << '\n'
-		<< "Number of vowel o(O): \t" << oCnt << '\n'
-		<< "Number of vowel u(U): \t" << uCnt << '\n'
-		<< "Number of space: \t" << spaceCnt << '\n'
-		<< "Number of tab char: \t" << tabCnt << '\n'
-		<< "Number of new line: \t" << newLineCnt << '\n'
-        << "Number of ff: \t" << ffCnt << '\n'
-        << "Number of fl: \t" << flCnt << '\n'
-        << "Number of fi: \t" << fiCnt << '\n' << std::endl;
-    
+
+    auto beg = st.begin();//使用while循环可以在循环结束后访问循环控制变量 beg
+    while (beg != st.end())//条件是beg 从迭代器的begin走到end-1
+    {
+        if (*beg == curstr)//判断此时迭代器的取值与前一个string对象是否一致，若一致则cur+1，否则执行else
+        {
+            ++cur;
+        }
+        else {
+        cur = 1;//cur置零
+        curstr = *beg;//并将当前迭代器所指string对象赋值给curstr
+        }
+        if(cur > max){//判断当前重复数值是否是出现过最大的，若是，则用cur当前重复数替换掉max，并将当前的string对象替换掉maxstr，否则什么都不执行
+            max = cur;
+            maxstr = curstr;
+        }
+        ++beg;//迭代器增加
+    }
+    std::cout << "maxStr: " + maxstr << " " << max << std::endl;
+    return 0;
 }
