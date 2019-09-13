@@ -6,31 +6,33 @@
 
 int main()
 {
-    int cur = 1, max = 0;
-    std::string str , maxstr = "" , curstr = "";
-    std::vector<std::string> st;
-    while (std::cin >> str)//此处将所有输入的string集合到容器st中
+    std::string str{},tmpstr1{},tmpstr2{};
+    unsigned cnt = 0,tmpcnt = 0;
+    std::cin >> str;
+    while (std::cin >> str)
     {
-        st.push_back(str);
-    }
-
-    auto beg = st.begin();//使用while循环可以在循环结束后访问循环控制变量 beg
-    while (beg != st.end())//条件是beg 从迭代器的begin走到end-1
-    {
-        if (*beg == curstr)//判断此时迭代器的取值与前一个string对象是否一致，若一致则cur+1，否则执行else
+        if (str == tmpstr1)
         {
-            ++cur;
+            ++cnt; 
         }
-        else {
-        cur = 1;//cur置零
-        curstr = *beg;//并将当前迭代器所指string对象赋值给curstr
+        else
+        {
+            if (tmpcnt < cnt)
+            {
+                tmpcnt = cnt;
+                tmpstr2 = tmpstr1;
+            }
+            cnt = 1;
         }
-        if(cur > max){//判断当前重复数值是否是出现过最大的，若是，则用cur当前重复数替换掉max，并将当前的string对象替换掉maxstr，否则什么都不执行
-            max = cur;
-            maxstr = curstr;
-        }
-        ++beg;//迭代器增加
+        tmpstr1 = str;
     }
-    std::cout << "maxStr: " + maxstr << " " << max << std::endl;
+    if (tmpcnt == 1)
+    {
+        std::cout << "无任何单词连续出现" << std::endl;
+    }
+    else
+    {
+        std::cout << tmpstr2 << "连续出现次数最多，次数为：" << tmpcnt << std::endl;
+    }
     return 0;
 }
