@@ -1,38 +1,21 @@
 #include <iostream>
-#include "Sales_data.h"
-#include <string>
-#include <cstdlib>
 #include <vector>
+#include <string>
 
-int main()
+bool isPrefix(const std::vector<int> &v1,const std::vector<int> &v2) {
+    auto item1 = v1.cbegin(),item2 = v2.cbegin();
+    for(;item1 !=v1.cend() && item2 != v2.cend();++item1,++item2){
+        if(*item1 != *item2){
+            break;
+        }
+    }
+    return item1 == v1.cend() || item2 == v2.cend();
+}
+
+int main(int argc, char const *argv[])
 {
-    std::string str{},tmpstr1{},tmpstr2{};
-    unsigned cnt = 0,tmpcnt = 0;
-    std::cin >> str;
-    while (std::cin >> str)
-    {
-        if (str == tmpstr1)
-        {
-            ++cnt; 
-        }
-        else
-        {
-            if (tmpcnt < cnt)
-            {
-                tmpcnt = cnt;
-                tmpstr2 = tmpstr1;
-            }
-            cnt = 1;
-        }
-        tmpstr1 = str;
-    }
-    if (tmpcnt == 1)
-    {
-        std::cout << "无任何单词连续出现" << std::endl;
-    }
-    else
-    {
-        std::cout << tmpstr2 << "连续出现次数最多，次数为：" << tmpcnt << std::endl;
-    }
+    std::vector<int> v1{2,1,1,2};
+    std::vector<int> v2{0,1,1,2,3,5,8};
+    std::cout << (isPrefix(v2,v1) ? "yes\n" : "no\n") << std::endl;
     return 0;
 }
