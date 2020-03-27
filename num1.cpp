@@ -8,23 +8,22 @@
 #include <vector>
 #include <cstring>
 //练习3.33
-long fact(long num)
+int abss(int num)
 {
-    long ret = 1;
-    while (num > 1)
+    if (num > 0)
     {
-        ret *= num--;  
+        return num;
     }
-    return ret;
+    return -num;
 }
 int main()
 {
-    long inputnum;
-    long result;
+    int inputnum;
+    int result;
     std::cout << "Input number :" << std::endl;
     std::cin >> inputnum ;
-    result = fact(inputnum);
-    std::cout << "fact result is :" << result << std::endl;
+    result = abss(inputnum);
+    std::cout << "abs result is :" << result << std::endl;
     return 0;
 }
         
