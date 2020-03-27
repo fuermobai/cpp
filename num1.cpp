@@ -8,19 +8,23 @@
 #include <vector>
 #include <cstring>
 //练习3.33
+long fact(long num)
+{
+    long ret = 1;
+    while (num > 1)
+    {
+        ret *= num--;  
+    }
+    return ret;
+}
 int main()
 {
-    std::vector<int> vec{1,2,3,4,5,6,7,8};
-    int a[vec.size()];
-    for (size_t i = 0; i < vec.size(); ++i)
-    {
-        a[i] = vec[i];
-    }
-    for (auto i : a)
-    {
-        std::cout << i << " ";
-    }
-    std::cout << std::endl;
+    long inputnum;
+    long result;
+    std::cout << "Input number :" << std::endl;
+    std::cin >> inputnum ;
+    result = fact(inputnum);
+    std::cout << "fact result is :" << result << std::endl;
     return 0;
 }
         
