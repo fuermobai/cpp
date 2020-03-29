@@ -2,18 +2,17 @@
 #include <vector>
 #include <string>
 
-long fact(int val)
+size_t cycle()
 {
-    long result = 1;
-    while (val > 1)
-    {
-        result *= val--;
-    }
-    return result;
+    static size_t num1 = 0;
+    return num1++;
 }
+
 int main(int argc, char const *argv[])
 {
-    long j = fact(12);
-    std::cout << "12! = " << j << std::endl;
+    for (size_t i = 0; i != 10; ++i)
+    {
+        std::cout << cycle() << std::endl;
+    }
     return 0;
 }
