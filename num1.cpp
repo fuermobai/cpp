@@ -2,18 +2,15 @@
 #include <vector>
 #include <string>
 
-size_t cycle()
+void reset(int &val)
 {
-    static size_t num1 = 0;
-    return num1++;
+    val = 0;
 }
 
-int main(int argc, char const *argv[])
-{
-    for (size_t i = 0; i != 10; ++i)
-    {
-        std::cout << cycle() << " ";
-    }
-    std::cout << std::endl;
+int main(int argc, const char** argv) {
+    auto nvalue = 0;//实参nvlaue
+    std::cin >> nvalue ;
+    reset(nvalue);//由于reset函数返回值为void，所以不可以放入标准输入输出流中，此处将实参传递给引用 &val
+    std::cout << nvalue << std::endl;
     return 0;
-}
+}   
