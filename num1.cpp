@@ -7,10 +7,17 @@ void reset(int &val)
     val = 0;
 }
 
+void yyswap(int &a , int &b)
+{
+    auto c = a;
+    a = b;
+    b = c;
+}
+
 int main(int argc, const char** argv) {
-    auto nvalue = 0;//实参nvlaue
-    std::cin >> nvalue ;
-    reset(nvalue);//由于reset函数返回值为void，所以不可以放入标准输入输出流中，此处将实参传递给引用 &val
-    std::cout << nvalue << std::endl;
+    int num1,num2;
+    std::cin >> num1 >> num2;
+    yyswap(num1,num2);
+    std::cout << "num1 is " <<  num1 << "\nnum2 is " << num2 << std::endl;
     return 0;
 }   
