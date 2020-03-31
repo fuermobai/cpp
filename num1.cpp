@@ -16,6 +16,8 @@ void exchangenothird(int &a,int &b)
     b = a - b;
     a = a - b;
 }
+
+
 int main(int argc, char const *argv[])
 {
     int input1 = 0,input2 = 0;
