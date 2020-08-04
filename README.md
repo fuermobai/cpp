@@ -2,7 +2,7 @@
 
 1. 除OpenCV外，进行到了第六章
 
-   ![当前进度](/home/libre/2020-08-04-143359_723x574_scrot.png)
+   ![当前进度](/home/libre/Desktop/my_git/cpp/README.assets/2020-08-04-143359_723x574_scrot.png)
 
 2. OpenCV进行到了YAML文档的读取
 
