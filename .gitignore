@@ -1,5 +1,14 @@
+# 默认不添加的文件及文件夹如下：
 *.[ao]
 *~
 ./GCC4.7.0/
 *.doc[x]
 *.[txt]
+/*
+# 默认添加的文件后缀如下
+!.gitignore
+!*.cpp
+!*.h
+!*.md
+!README.assets/
+!*.c[c]
