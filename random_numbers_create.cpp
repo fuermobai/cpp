@@ -4,8 +4,8 @@
 int main()
 {
     int start = clock();//配合15行计算本程序运行时间
-    srand((unsigned long)time(NULL));
-    unsigned long i,j;
+    srand((int)time(NULL));
+    int i,j;
     for (size_t i = 0; i < 10000000; ++i)//生成一千万个无符号随机数
     {
         j = rand();
