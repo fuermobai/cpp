@@ -13,9 +13,17 @@ void scanf_read(){
         std::cin >> numbers[i];
     }
 }
+
+void cin_read(){
+    freopen("data.txt", "r", stdin);
+    for (size_t i = 0; i < MAXN; ++i)
+    {
+        std::cin >> numbers[i];
+    }
+}
 int main(int argc, const char** argv) {
     int start = clock();
-    scanf_read();
+    cin_read();
     printf("%.5lf\n",double(clock() - start)/CLOCKS_PER_SEC);
     return 0;
 }
