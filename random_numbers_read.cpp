@@ -16,6 +16,7 @@ void scanf_read(){
 
 void cin_read(){
     freopen("data.txt", "r", stdin);
+    std::ios::sync_with_stdio(false);
     for (size_t i = 0; i < MAXN; ++i)
     {
         std::cin >> numbers[i];
