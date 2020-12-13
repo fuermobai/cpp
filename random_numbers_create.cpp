@@ -1,10 +1,14 @@
+<<<<<<< HEAD
 #include <cstdio>
+=======
+>>>>>>> temp
 #include <iostream>
 #include <ctime>
 #include <cstdlib>
 using namespace std;
 int main(int argc, const char** argv) 
 {
+<<<<<<< HEAD
     int start = clock();//配合19行计算本程序运行时间
     srand((int)time(NULL));
     int i,j;
@@ -18,4 +22,8 @@ int main(int argc, const char** argv)
     printf("%.5lf\n",double(clock()-start)/CLOCKS_PER_SEC);//配合8行计算本程序运行时间
     fclose(stdout);
     return 0;
+=======
+    int start = clock();
+    printf("%.3lf\n",double(clock()-start)/CLOCKS_PER_SEC);
+>>>>>>> temp
 }
