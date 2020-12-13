@@ -6,6 +6,7 @@
 #include <fcntl.h>
 #include <sys/types.h>
 #include <sys/stat.h>
+#include <sys/mman.h>
 #include <unistd.h>//包含linux C下的read函数
 
 const int MAXN = 10000000;
@@ -61,12 +62,19 @@ void read_analyse(){
     analyse(buf,len);
 }
 
+void mmap_analyse(){
+    int fd = open("data.txt",O_RDONLY);
+    int len = lseek(fd,0,SEEK_END);
+    char *mbuf = (char *) mmap(NULL,len,PROT_READ,MAP_PRIVATE,fd,0);
+    analyse(mbuf,len);
+}
 
 int main(int argc, const char** argv) {
     int start = clock();
     //cin_read_nosync();
     //fread_analysis();
-    read_analyse();
+    //read_analyse();
+    mmap_analyse();
     printf("%.5lf\n",double(clock() - start)/CLOCKS_PER_SEC);
     return 0;
 }
