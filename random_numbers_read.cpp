@@ -2,6 +2,11 @@
 
 #include <ctime>
 #include <iostream>
+#include <fstream>
+#include <fcntl.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <unistd.h>//包含linux C下的read函数
 
 const int MAXN = 10000000;
 int numbers[MAXN];
@@ -49,12 +54,19 @@ void fread_analysis(){
     analyse(buf,len);
 }
 
+void read_analyse(){
+    int fd =open("data.txt",O_RDONLY);
+    int len = read(fd,buf,MAXS);
+    buf[len] = '\0';
+    analyse(buf,len);
+}
 
 
 int main(int argc, const char** argv) {
     int start = clock();
     //cin_read_nosync();
-    fread_analysis();
+    //fread_analysis();
+    read_analyse();
     printf("%.5lf\n",double(clock() - start)/CLOCKS_PER_SEC);
     return 0;
 }
